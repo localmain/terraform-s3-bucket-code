@@ -1,7 +1,7 @@
 provider "aws" {
-  region     = "us-east-2"
-  access_key = ""
-  secret_key = ""
+  region     = "us-east-1"
+  access_key = "AKIA6KQYEHKNMUGI6UU6"
+  secret_key = "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"
 }
 
 #1 -this will create a S3 bucket in AWS
@@ -22,17 +22,5 @@ server_side_encryption_configuration {
       }
     }
   }
-}
-
-# 2 - this Creates Dynamo Table
-resource "aws_dynamodb_table" "terraform_locks" {
-# Give unique name for dynamo table name
-  name         = "TerraFom1-up-and-run-locks"
-  billing_mode = "PAY_PER_REQUEST"
-  hash_key     = "LockID"
-        attribute {
-         name = "LockID"
-         type = "S"
-      }
 }
 
